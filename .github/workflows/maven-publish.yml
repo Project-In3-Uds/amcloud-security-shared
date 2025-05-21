@@ -24,7 +24,7 @@ jobs:
       - name: Configure Maven for GitHub Packages
         run: |
           mkdir -p ${{ github.workspace }}/.m2
-          cat > ${{ github.workspace }}/.m2/settings.xml <<EOF
+          cat <<EOF > ${{ github.workspace }}/.m2/settings.xml
 <settings>
   <servers>
     <server>
