@@ -88,7 +88,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- disable repackaging -->
 				<configuration>
 					<skip>true</skip>
 				</configuration>
@@ -102,4 +101,13 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+	    <repository>
+	        <id>github</id>
+	        <name>GitHub Project-In3-Uds Apache Maven Packages</name>
+	        <url>https://maven.pkg.github.com/Project-In3-Uds/amcloud-security-shared</url>
+	    </repository>
+	</distributionManagement>
 </project>
+
+
