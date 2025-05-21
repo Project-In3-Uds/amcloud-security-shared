@@ -1,0 +1,29 @@
+name: Publish Maven Package
+
+on:
+  push:
+    branches:
+      - main  # Modifier si nécessaire
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          server-id: github
+          settings-path: ${{ github.workspace }}
+
+      - name: Build and publish package
+        run: |
+          mvn clean install
+          mvn deploy
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
