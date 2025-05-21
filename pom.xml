@@ -90,13 +90,6 @@
     	</repository>
 	</distributionManagement>
     
-	<servers>
-    	<server>
-        	<id>github</id>
-        	<username>${GIT_ACTOR}</username>
-        	<password>${GIT_TOKEN}</password>
-    	</server>
-	</servers>
 
 	<build>
 		<plugins>
